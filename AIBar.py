@@ -53,7 +53,7 @@ def main():
     else:
         # 窗口不存在
             
-        from PySide6.QtWidgets import QApplication, QWidget, QGridLayout,QPushButton, QLineEdit, QTextEdit
+        from PySide6.QtWidgets import QApplication, QWidget, QGridLayout,QPushButton, QLineEdit, QTextEdit,QLabel
         from PySide6.QtCore import Qt, QThread, Signal, QObject
         from qfluentwidgets import FluentWindow, NavigationItemPosition, FluentIcon, PushButton, LineEdit, TextEdit, Theme, setTheme
         from openai import OpenAI
@@ -201,14 +201,17 @@ def main():
                 super().__init__()
                 self.setObjectName("选项")
                 layout=QGridLayout()
+                self.label1= QLabel("你的API-Key")
+                self.label1.setStyleSheet("color:white;font-size:16px;")
                 self.api_key_input = LineEdit()
                 self.button1 = PushButton("确定")
                 self.exit_button=PushButton("退出")
 
-                layout.addWidget(self.api_key_input, 0,0,1,3)
-                layout.addWidget(self.button1, 0,3,1,1)
-                layout.addWidget(self.exit_button, 2,0,1,4)
-                layout.setRowStretch(1,1)
+                layout.addWidget(self.label1, 0,0,1,4)
+                layout.addWidget(self.api_key_input, 1,0,1,3)
+                layout.addWidget(self.button1, 1,3,1,1)
+                layout.addWidget(self.exit_button, 3,0,1,4)
+                layout.setRowStretch(2,1)
 
                 # 控件事件
                 self.exit_button.clicked.connect(self.exit_app)
