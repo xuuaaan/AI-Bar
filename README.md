@@ -1,7 +1,7 @@
 # AI栏 (AI-Bar)
 
 基于 PySide6 和 DeepSeek API 的任务栏AI快捷工具，支持流式对话、上下文记忆、窗口自动隐藏，提供类 Fluent Design 的现代化界面。
-目前只进行了windows环境的适配
+该工具只支持windows平台
 
 ## ✨ 主要功能
 - **💬 流式对话**：实时接收 AI 响应，逐字显示，体验流畅。
